@@ -10691,7 +10691,7 @@ var Unit = require('../unit');
  * @param {string|Script} data.scriptPubKey the script that must be resolved to release the funds
  * @param {string|Script=} data.script alias for `scriptPubKey`
  * @param {number} data.amount amount of bitcoins associated
- * @param {number=} data.satoshis alias for `amount`, but expressed in satoshis (1 BTCZ = 1e8 satoshis)
+ * @param {number=} data.satoshis alias for `amount`, but expressed in satoshis (1 BZC = 1e8 satoshis)
  * @param {string|Address=} data.address the associated address to the script, if provided
  */
 function UnspentOutput(data) {
@@ -10716,7 +10716,7 @@ function UnspentOutput(data) {
   var script = new Script(data.scriptPubKey || data.script);
   $.checkArgument(!_.isUndefined(data.amount) || !_.isUndefined(data.satoshis),
                   'Must provide an amount for the output');
-  var amount = !_.isUndefined(data.amount) ? new Unit.fromBTCZ(data.amount).toSatoshis() : data.satoshis;
+  var amount = !_.isUndefined(data.amount) ? new Unit.fromBZC(data.amount).toSatoshis() : data.satoshis;
   $.checkArgument(_.isNumber(amount), 'Amount must be a number');
   JSUtil.defineImmutable(this, {
     address: address,
@@ -10763,7 +10763,7 @@ UnspentOutput.prototype.toObject = UnspentOutput.prototype.toJSON = function toO
     txid: this.txId,
     vout: this.outputIndex,
     scriptPubKey: this.script.toBuffer().toString('hex'),
-    amount: Unit.fromSatoshis(this.satoshis).toBTCZ()
+    amount: Unit.fromSatoshis(this.satoshis).toBZC()
   };
 };
 
@@ -10778,30 +10778,30 @@ var errors = require('./errors');
 var $ = require('./util/preconditions');
 
 var UNITS = {
-  'BTCZ'      : [1e8, 8],
-  'mBTCZ'     : [1e5, 5],
-  'uBTCZ'     : [1e2, 2],
+  'BZC'      : [1e8, 8],
+  'mBZC'     : [1e5, 5],
+  'uBZC'     : [1e2, 2],
   'bits'     : [1e2, 2],
   'satoshis' : [1, 0]
 };
 
 /**
  * Utility for handling and converting bitcoins units. The supported units are
- * BTCZ, mBTCZ, bits (also named uBTCZ) and satoshis. A unit instance can be created with an
- * amount and a unit code, or alternatively using static methods like {fromBTCZ}.
+ * BZC, mBZC, bits (also named uBZC) and satoshis. A unit instance can be created with an
+ * amount and a unit code, or alternatively using static methods like {fromBZC}.
  * It also allows to be created from a fiat amount and the exchange rate, or
  * alternatively using the {fromFiat} static method.
  * You can consult for different representation of a unit instance using it's
  * {to} method, the fixed unit methods like {toSatoshis} or alternatively using
  * the unit accessors. It also can be converted to a fiat amount by providing the
- * corresponding BTCZ/fiat exchange rate.
+ * corresponding BZC/fiat exchange rate.
  *
  * @example
  * ```javascript
- * var sats = Unit.fromBTCZ(1.3).toSatoshis();
- * var mili = Unit.fromBits(1.3).to(Unit.mBTCZ);
+ * var sats = Unit.fromBZC(1.3).toSatoshis();
+ * var mili = Unit.fromBits(1.3).to(Unit.mBZC);
  * var bits = Unit.fromFiat(1.3, 350).bits;
- * var btcz = new Unit(1.3, Unit.bits).BTCZ;
+ * var BZC = new Unit(1.3, Unit.bits).BZC;
  * ```
  *
  * @param {Number} amount - The amount to be represented
@@ -10814,13 +10814,13 @@ function Unit(amount, code) {
     return new Unit(amount, code);
   }
 
-  // convert fiat to BTCZ
+  // convert fiat to BZC
   if (_.isNumber(code)) {
     if (code <= 0) {
       throw new errors.Unit.InvalidRate(code);
     }
     amount = amount / code;
-    code = Unit.BTCZ;
+    code = Unit.BZC;
   }
 
   this._value = this._from(amount, code);
@@ -10852,23 +10852,23 @@ Unit.fromObject = function fromObject(data){
 };
 
 /**
- * Returns a Unit instance created from an amount in BTCZ
+ * Returns a Unit instance created from an amount in BZC
  *
- * @param {Number} amount - The amount in BTCZ
+ * @param {Number} amount - The amount in BZC
  * @returns {Unit} A Unit instance
  */
-Unit.fromBTCZ = function(amount) {
-  return new Unit(amount, Unit.BTCZ);
+Unit.fromBZC = function(amount) {
+  return new Unit(amount, Unit.BZC);
 };
 
 /**
- * Returns a Unit instance created from an amount in mBTCZ
+ * Returns a Unit instance created from an amount in mBZC
  *
- * @param {Number} amount - The amount in mBTCZ
+ * @param {Number} amount - The amount in mBZC
  * @returns {Unit} A Unit instance
  */
 Unit.fromMillis = Unit.fromMilis = function(amount) {
-  return new Unit(amount, Unit.mBTCZ);
+  return new Unit(amount, Unit.mBZC);
 };
 
 /**
@@ -10895,7 +10895,7 @@ Unit.fromSatoshis = function(amount) {
  * Returns a Unit instance created from a fiat amount and exchange rate.
  *
  * @param {Number} amount - The amount in fiat
- * @param {Number} rate - The exchange rate BTCZ/fiat
+ * @param {Number} rate - The exchange rate BZC/fiat
  * @returns {Unit} A Unit instance
  */
 Unit.fromFiat = function(amount, rate) {
@@ -10920,7 +10920,7 @@ Unit.prototype.to = function(code) {
     if (code <= 0) {
       throw new errors.Unit.InvalidRate(code);
     }
-    return parseFloat((this.BTCZ * code).toFixed(2));
+    return parseFloat((this.BZC * code).toFixed(2));
   }
 
   if (!UNITS[code]) {
@@ -10932,21 +10932,21 @@ Unit.prototype.to = function(code) {
 };
 
 /**
- * Returns the value represented in BTCZ
+ * Returns the value represented in BZC
  *
- * @returns {Number} The value converted to BTCZ
+ * @returns {Number} The value converted to BZC
  */
-Unit.prototype.toBTCZ = function() {
-  return this.to(Unit.BTCZ);
+Unit.prototype.toBZC = function() {
+  return this.to(Unit.BZC);
 };
 
 /**
- * Returns the value represented in mBTCZ
+ * Returns the value represented in mBZC
  *
- * @returns {Number} The value converted to mBTCZ
+ * @returns {Number} The value converted to mBZC
  */
 Unit.prototype.toMillis = Unit.prototype.toMilis = function() {
-  return this.to(Unit.mBTCZ);
+  return this.to(Unit.mBZC);
 };
 
 /**
@@ -10970,7 +10970,7 @@ Unit.prototype.toSatoshis = function() {
 /**
  * Returns the value represented in fiat
  *
- * @param {string} rate - The exchange rate between BTCZ/currency
+ * @param {string} rate - The exchange rate between BZC/currency
  * @returns {Number} The value converted to satoshis
  */
 Unit.prototype.atRate = function(rate) {
@@ -10993,8 +10993,8 @@ Unit.prototype.toString = function() {
  */
 Unit.prototype.toObject = Unit.prototype.toJSON = function toObject() {
   return {
-    amount: this.BTCZ,
-    code: Unit.BTCZ
+    amount: this.BZC,
+    code: Unit.BZC
   };
 };
 
@@ -11169,9 +11169,9 @@ URI.prototype._fromObject = function(obj) {
 };
 
 /**
- * Internal function to transform a BTCZ string amount into satoshis
+ * Internal function to transform a BZC string amount into satoshis
  *
- * @param {string} amount - Amount BTCZ string
+ * @param {string} amount - Amount BZC string
  * @throws {TypeError} Invalid amount
  * @returns {Object} Amount represented in satoshis
  */
@@ -11180,7 +11180,7 @@ URI.prototype._parseAmount = function(amount) {
   if (isNaN(amount)) {
     throw new TypeError('Invalid amount');
   }
-  return Unit.fromBTCZ(amount).toSatoshis();
+  return Unit.fromBZC(amount).toSatoshis();
 };
 
 URI.prototype.toObject = URI.prototype.toJSON = function toObject() {
@@ -11203,7 +11203,7 @@ URI.prototype.toObject = URI.prototype.toJSON = function toObject() {
 URI.prototype.toString = function() {
   var query = {};
   if (this.amount) {
-    query.amount = Unit.fromSatoshis(this.amount).toBTCZ();
+    query.amount = Unit.fromSatoshis(this.amount).toBZC();
   }
   if (this.message) {
     query.message = this.message;

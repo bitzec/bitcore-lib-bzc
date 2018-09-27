@@ -4,9 +4,9 @@ Represents a bitcoin payment URI. Bitcoin URI strings became the most popular wa
 URI Examples:
 
 ```
-bitcoinz:12A1MyfXbW6RhdRAZEqofac5jCQQjwEPBu
-bitcoinz:12A1MyfXbW6RhdRAZEqofac5jCQQjwEPBu?amount=1.2
-bitcoinz:12A1MyfXbW6RhdRAZEqofac5jCQQjwEPBu?amount=1.2&message=Payment&label=Satoshi&extra=other-param
+bitzec:12A1MyfXbW6RhdRAZEqofac5jCQQjwEPBu
+bitzec:12A1MyfXbW6RhdRAZEqofac5jCQQjwEPBu?amount=1.2
+bitzec:12A1MyfXbW6RhdRAZEqofac5jCQQjwEPBu?amount=1.2&message=Payment&label=Satoshi&extra=other-param
 ```
 
 ## URI Validation
@@ -15,7 +15,7 @@ The main use that we expect you'll have for the `URI` class in bitcore is valida
 The code for validating URIs looks like this:
 
 ```javascript
-var uriString = 'bitcoinz:12A1MyfXbW6RhdRAZEqofac5jCQQjwEPBu?amount=1.2';
+var uriString = 'bitzec:12A1MyfXbW6RhdRAZEqofac5jCQQjwEPBu?amount=1.2';
 var valid = URI.isValid(uriString);
 var uri = new URI(uriString);
 console.log(uri.address.network, uri.amount); // 'livenet', 120000000

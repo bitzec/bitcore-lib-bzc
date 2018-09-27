@@ -6,14 +6,14 @@ var bitcore = module.exports;
 bitcore.version = 'v' + require('./package.json').version;
 bitcore.versionGuard = function(version) {
   if (version !== undefined) {
-    var message = 'More than one instance of bitcore-lib-btcz found. ' +
-      'Please make sure to require bitcore-lib-btcz and check that submodules do' +
-      ' not also include their own bitcore-lib-btcz dependency.';
+    var message = 'More than one instance of bitcore-lib-bzc found. ' +
+      'Please make sure to require bitcore-lib-bzc and check that submodules do' +
+      ' not also include their own bitcore-lib-bzc dependency.';
     throw new Error(message);
   }
 };
 bitcore.versionGuard(global._bitcoreBtcz);
-global._bitcoreBtcz = bitcore.version;
+global._bitcoreBZC = bitcore.version;
 
 // crypto
 bitcore.crypto = {};

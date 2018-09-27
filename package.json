@@ -1,14 +1,14 @@
 {
   "description": "A pure and powerful JavaScript Bitcoin library.",
   "author": {
-    "name": "Thw BitcoinZ Community",
-    "email": "admin@bitcoinz.ph"
+    "name": "the binary digit zero knowledge electronic currency",
+    "email": "bitze18@gmail.com"
   },
   "browser": {
     "request": "browser-request"
   },
   "bugs": {
-    "url": "https://github.com/bitcoinz-wallets/bitcore-lib-btcz/issues"
+    "url": "https://github.com/bitzec/bitcore-lib-bzc/issues"
   },
   "contributors": [
     {
@@ -118,12 +118,12 @@
       "email": "patrick@bitpay.com"
     }
   ],
-  "name": "bitcore-lib-btcz",
+  "name": "bitcore-lib-bzc",
   "optionalDependencies": {},
   "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitcoinz-wallets/bitcore-lib-btcz.git"
+    "url": "git+https://github.com/bitzec/bitcore-lib-bzc.git"
   },
   "scripts": {
     "build": "gulp",

@@ -4,8 +4,8 @@ var should = require("chai").should();
 var bitcore = require("../");
 
 describe('#versionGuard', function() {
-  it('global._bitcoreBtcz should be defined', function() {
-    should.equal(global._bitcoreBtcz, bitcore.version);
+  it('global._bitcoreBzc should be defined', function() {
+    should.equal(global._bitcoreBzc, bitcore.version);
   });
 
   it('throw an error if version is already defined', function() {
