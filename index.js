@@ -12,7 +12,7 @@ bitcore.versionGuard = function(version) {
     throw new Error(message);
   }
 };
-bitcore.versionGuard(global._bitcoreBtcz);
+bitcore.versionGuard(global._bitcoreBzc);
 global._bitcoreBZC = bitcore.version;
 
 // crypto
