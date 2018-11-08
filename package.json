@@ -21,11 +21,11 @@
     },
     {
       "name": "Gordon Hall",
-      "email": "gordon@bitzec.com"
+      "email": "gordon@bitpay.com"
     },
     {
       "name": "Jeff Garzik",
-      "email": "jgarzik@bitzec.com"
+      "email": "jgarzik@bitpay.com"
     },
     {
       "name": "Kyle Drake",
@@ -49,7 +49,7 @@
     },
     {
       "name": "Stephen Pair",
-      "email": "stephen@bitzec.com"
+      "email": "stephen@bitpay.com"
     },
     {
       "name": "Wei Lu",
@@ -65,7 +65,7 @@
     "lodash": "=4.17.4"
   },
   "devDependencies": {
-    "bitcore-build": "https://github.com/bitzec/bitcore-build.git#d4e8b2b2f1e2c065c3a807dcb6a6250f61d67ab3",
+    "bitcore-build": "https://github.com/bitpay/bitcore-build.git#d4e8b2b2f1e2c065c3a807dcb6a6250f61d67ab3",
     "brfs": "^1.2.0",
     "chai": "^1.10.0",
     "gulp": "^3.8.10",
@@ -114,8 +114,8 @@
       "email": "laconia@gmail.com"
     },
     {
-      "name": "patrickbitzec",
-      "email": "patrick@bitzec.com"
+      "name": "patrickbitpay",
+      "email": "patrick@bitpay.com"
     }
   ],
   "name": "bitcore-lib-bzc",

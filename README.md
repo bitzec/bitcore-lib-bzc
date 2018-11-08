@@ -47,7 +47,7 @@ To get community assistance and ask for help with implementation questions, plea
 
 We're using Bitcore in production, as are [many others](http://bitcore.io#projects), but please use common sense when doing anything related to finances! We take no responsibility for your implementation decisions.
 
-If you find a security issue, please email security@bitzec.com.
+If you find a security issue, please email security@bitpay.com.
 
 ## Contributing
 
@@ -93,4 +93,4 @@ or create a test coverage report (you can open `coverage/lcov-report/index.html`
 
 Code released under [the MIT license](https://github.com/bitzec/bitcore-lib-bzc/blob/master/LICENSE).
 
-Copyright 2013-2017 bitzec, Inc. Bitcore is a trademark maintained by bitzec, Inc.
+Copyright 2013-2017 BitPay, Inc. Bitcore is a trademark maintained by BitPay, Inc.

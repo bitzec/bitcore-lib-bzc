@@ -35,14 +35,14 @@ To get started, just `npm install bitcore` or `bower install bitcore`.
 
 Some functionality is implemented as a module that can be installed separately:
 
-* [Payment Protocol Support](https://github.com/bitzec/bitcore-payment-protocol)
-* [Peer to Peer Networking](https://github.com/bitzec/bitcore-p2p)
-* [Bitcoin Core JSON-RPC](https://github.com/bitzec/bitcoind-rpc)
-* [Payment Channels](https://github.com/bitzec/bitcore-channel)
-* [Mnemonics](https://github.com/bitzec/bitcore-mnemonic)
-* [Elliptical Curve Integrated Encryption Scheme](https://github.com/bitzec/bitcore-ecies)
-* [Blockchain Explorers](https://github.com/bitzec/bitcore-explorers)
-* [Signed Messages](https://github.com/bitzec/bitcore-message)
+* [Payment Protocol Support](https://github.com/bitpay/bitcore-payment-protocol)
+* [Peer to Peer Networking](https://github.com/bitpay/bitcore-p2p)
+* [Bitcoin Core JSON-RPC](https://github.com/bitpay/bitcoind-rpc)
+* [Payment Channels](https://github.com/bitpay/bitcore-channel)
+* [Mnemonics](https://github.com/bitpay/bitcore-mnemonic)
+* [Elliptical Curve Integrated Encryption Scheme](https://github.com/bitpay/bitcore-ecies)
+* [Blockchain Explorers](https://github.com/bitpay/bitcore-explorers)
+* [Signed Messages](https://github.com/bitpay/bitcore-message)
 
 # Examples
 
