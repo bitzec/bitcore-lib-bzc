@@ -7,8 +7,8 @@ We're working hard to make *bitcore* the most powerful JavaScript library for wo
 
 If there are any questions, etc., please feel to ask in one of the community channels:
 
-- https://labs.bitpay.com/c/bitcore (Support Forum)
-- https://gitter.im/bitpay/bitcore (Development Chat)
+- https://labs.bitzec.com/c/bitcore (Support Forum)
+- https://gitter.im/bitzec/bitcore (Development Chat)
 
 ## Quick Checklist
 
@@ -246,8 +246,8 @@ git checkout -b remove/some-file
 
 We expect pull requests to be rebased to the master branch before merging:
 ```sh
-git remote add bitpay git@github.com:bitpay/bitcore.git
-git pull --rebase bitpay master
+git remote add bitzec git@github.com:bitzec/bitcore.git
+git pull --rebase bitzec master
 ```
 
 Note that we require rebasing your branch instead of merging it, for commit readability reasons.
@@ -258,11 +258,11 @@ git push origin your_branch_name
 git push origin feature/some-new-stuff
 git push origin fix/some-bug
 ```
-Finally go to [github.com/bitpay/bitcore](https://github.com/bitpay/bitcore) in your web browser and issue a new pull request.
+Finally go to [github.com/bitzec/bitcore](https://github.com/bitzec/bitcore) in your web browser and issue a new pull request.
 
 Main contributors will review your code and possibly ask for changes before your code is pulled in to the main repository.  We'll check that all tests pass, review the coding style, and check for general code correctness. If everything is OK, we'll merge your pull request and your code will be part of bitcore.
 
 If you have any questions feel free to post them to
-[github.com/bitpay/bitcore/issues](https://github.com/bitpay/bitcore/issues).
+[github.com/bitzec/bitcore/issues](https://github.com/bitzec/bitcore/issues).
 
 Thanks for your time and code!

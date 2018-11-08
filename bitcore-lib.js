@@ -31479,7 +31479,7 @@ module.exports = basex(ALPHABET)
 // Copyright (c) 2011 Google Inc
 // Ported to JavaScript by Stefan Thomas
 // Merged Buffer refactorings from base58-native by Stephen Pair
-// Copyright (c) 2013 BitPay Inc
+// Copyright (c) 2013 bitzec Inc
 
 var Buffer = require('safe-buffer').Buffer
 
@@ -54023,7 +54023,7 @@ module.exports={
   "name": "bitcore-lib",
   "version": "0.15.0",
   "description": "A pure and powerful JavaScript Bitcoin library.",
-  "author": "BitPay <dev@bitpay.com>",
+  "author": "bitzec <dev@bitzec.com>",
   "main": "index.js",
   "scripts": {
     "lint": "gulp lint",
@@ -54063,7 +54063,7 @@ module.exports={
     "lodash": "=4.17.4"
   },
   "devDependencies": {
-    "bitcore-build": "https://github.com/bitpay/bitcore-build.git#d4e8b2b2f1e2c065c3a807dcb6a6250f61d67ab3",
+    "bitcore-build": "https://github.com/bitzec/bitcore-build.git#d4e8b2b2f1e2c065c3a807dcb6a6250f61d67ab3",
     "brfs": "^1.2.0",
     "chai": "^1.10.0",
     "gulp": "^3.8.10",

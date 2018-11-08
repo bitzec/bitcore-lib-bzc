@@ -51,14 +51,14 @@ describe('URI', function() {
     URI.isValid('bitzec:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj?amount=1.2&req-other=param',
                 ['req-other']).should.equal(true);
     URI.isValid('bitzec:mmrqEBJxUCf42vdb3oozZtyz5mKr3Vb2Em?amount=0.1&' +
-                'r=https%3A%2F%2Ftest.bitpay.com%2Fi%2F6DKgf8cnJC388irbXk5hHu').should.equal(true);
+                'r=https%3A%2F%2Ftest.bitzec.com%2Fi%2F6DKgf8cnJC388irbXk5hHu').should.equal(true);
 
     URI.isValid('bitzec:').should.equal(false);
     URI.isValid('bitzec:badUri').should.equal(false);
     URI.isValid('bitzec:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfk?amount=bad').should.equal(false);
     URI.isValid('bitzec:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfk?amount=1.2&req-other=param')
                 .should.equal(false);
-    URI.isValid('bitzec:?r=https%3A%2F%2Ftest.bitpay.com%2Fi%2F6DKgf8cnJC388irbXk5hHu')
+    URI.isValid('bitzec:?r=https%3A%2F%2Ftest.bitzec.com%2Fi%2F6DKgf8cnJC388irbXk5hHu')
                 .should.equal(false);
   });
 
@@ -232,7 +232,7 @@ describe('URI', function() {
 
   it('writes correctly the "r" parameter on string serialization', function() {
     var originalString = 'bitzec:mmrqEBJxUCf42vdb3oozZtyz5mKr3Vb2Em?amount=0.1&' +
-                         'r=https%3A%2F%2Ftest.bitpay.com%2Fi%2F6DKgf8cnJC388irbXk5hHu';
+                         'r=https%3A%2F%2Ftest.bitzec.com%2Fi%2F6DKgf8cnJC388irbXk5hHu';
     var uri = new URI(originalString);
     uri.toString().should.equal(originalString);
   });
