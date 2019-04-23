@@ -57,6 +57,7 @@
     }
   ],
   "dependencies": {
+    "blake2b": "https://github.com/BitGo/blake2b#6268e6dd678661e0acc4359e9171b97eb1ebf8ac",
     "bn.js": "=4.11.8",
     "bs58": "=4.0.1",
     "buffer-compare": "=1.1.1",
@@ -77,7 +78,7 @@
     "tarball": "https://registry.npmjs.org/bitcore-lib/-/bitcore-lib-0.14.0.tgz"
   },
   "gitHead": "2b5b486ee9626eeb0a57c1ef3603d3d42bf46b2f",
-  "homepage": "https://github.com/bitzec/bitcore-lib-bzc#readme",
+  "homepage": "https://github.com/bitpay/bitcore-lib#readme",
   "keywords": [
     "bitcoin",
     "transaction",
@@ -131,5 +132,5 @@
     "lint": "gulp lint",
     "test": "mocha"
   },
-  "version": "1.0.2"
+  "version": "2.0.0"
 }

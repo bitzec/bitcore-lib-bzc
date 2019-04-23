@@ -54049,7 +54049,7 @@ module.exports={
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitzec/bitcore-lib-bzc.git"
+    "url": "https://github.com/bitpay/bitcore-lib.git"
   },
   "browser": {
     "request": "browser-request"
